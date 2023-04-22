@@ -1,6 +1,7 @@
 package basic;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,6 +38,23 @@ public class EditExample {
 		WebElement disabledBox = driver.findElement(By.id("j_idt88:j_idt93"));
 		boolean enabled = disabledBox.isEnabled();
 		System.out.println(enabled);
+		
+		//Type email and Tab. Confirm control moved to next element.
+		WebElement emailTab = driver.findElement(By.id("j_idt88:j_idt99"));
+		emailTab.sendKeys("danuka19980@gmail.com"+Keys.TAB);
+		
+		//Type about yourself
+		WebElement myself = driver.findElement(By.id("j_idt88:j_idt101"));
+		myself.sendKeys("I am Dananjaya Fernando.");
+		
+		//Text Editor
+		WebElement editor = driver.findElement(By.xpath("//*[@id=\"j_idt88:j_idt103_editor\"]/div[1]"));
+		editor.sendKeys("I am Dananjaya Fernando.");
+		editor.sendKeys("I want become Quality Assurence Engineer.");
+		
+		
+		
+		
 	}
 
 }
