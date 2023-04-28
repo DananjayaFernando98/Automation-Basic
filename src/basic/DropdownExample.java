@@ -20,7 +20,7 @@ public class DropdownExample {
 		driver.get("https://www.leafground.com/select.xhtml");
 		
 		//Which is your favorite UI Automation tool
-		WebElement dropDown1 = driver.findElement(By.xpath("//*[@id=\"j_idt87\"]/div/div[1]/div[1]/div/div/select"));
+		WebElement dropDown1 = driver.findElement(By.xpath("//*[@id=\'j_idt87\']/div/div[1]/div[1]/div/div/select"));
 		Select select = new Select(dropDown1);
 		//select by index
 		select.selectByIndex(2);
@@ -33,10 +33,12 @@ public class DropdownExample {
 		System.out.println("Number of Element : " + size);
 		
 		
+
 		/*
 		 
+		
 		 
-		WebElement clickButton = driver.findElement(By.xpath("//*[@id=\"j_idt87:auto-complete\"]/button"));
+		WebElement clickButton = driver.findElement(By.xpath("//*[@id=\'j_idt87:auto-complete\']/button"));
 		clickButton.click();
 		WebElement multipleSelect = driver.findElement(By.id("j_idt87:auto-complete"));
 		Select MultiSelectBox = new Select(multipleSelect);
@@ -44,7 +46,7 @@ public class DropdownExample {
 		MultiSelectBox.selectByValue("Appium");
 		MultiSelectBox.selectByValue("Selenium WebDriver");
 		
-		WebElement country = driver.findElement(By.xpath("//*[@id=\"j_idt87:country\"]"));
+		WebElement country = driver.findElement(By.xpath("//*[@id=\'j_idt87:country\']"));
 		Select Countryselect = new Select(country);
 		Countryselect.selectByValue("1");
 		//country.sendKeys("Germany");
@@ -56,7 +58,9 @@ public class DropdownExample {
 		//boolean answer = CityVerify.isEmpty();
 		//System.out.println(answer);
 		
-		*/
+		
+		 */
+	
 	}
 
 }
