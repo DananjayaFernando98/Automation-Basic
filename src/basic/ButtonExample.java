@@ -15,7 +15,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class ButtonExample {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 		System.setProperty("webdriver.chrome.driver", 
 				"C:\\\\Selenium Webdriver\\\\Chromedriver\\\\chromedriver_win32\\\\chromedriver.exe");
@@ -23,6 +23,7 @@ public class ButtonExample {
 		
 		driver.get("https://www.leafground.com/button.xhtml");
 		
+		driver.manage().window().maximize();
 		
 		//Find the position of the Submit button
 		WebElement  getpositionButton = driver.findElement(By.id("j_idt88:j_idt94"));
@@ -31,17 +32,21 @@ public class ButtonExample {
 		int yValue = xypoint.getY();
 		System.out.println("X Value is : "+ xValue+ "\n" + "Y Value is : "+ yValue);
 		
+		
+		
 		//Find the Save button color
 		WebElement colorButton = driver.findElement(By.id("j_idt88:j_idt96"));
 		String color = colorButton.getCssValue("background");
 		System.out.println("Button color is :" + color);
 		
+		Thread.sleep(3000);
 		
-		//Confirm if the button is disabled.
+		//Confirm if the button is Enabled.
 		WebElement disabledcheck = driver.findElement(By.id("j_idt88:j_idt92"));
 		boolean enabled = disabledcheck.isEnabled();
-		System.out.println(enabled);
+		System.out.println("Confirm if the button is Enabled :" +enabled);
 		
+		Thread.sleep(3000);
 		//Find the height and width of this button
 		WebElement sizeButton = driver.findElement(By.id("j_idt88:j_idt98"));
 		int height = sizeButton.getSize().getHeight();
@@ -52,13 +57,15 @@ public class ButtonExample {
 		//WebElement gotohome = driver.findElement(By.id("j_idt88:j_idt90"));
 		//gotohome.click();
 		
-		
+		Thread.sleep(3000);
 		//Mouse hover and confirm the color changed
 		WebElement hoverCheck = driver.findElement(By.id("j_idt88:j_idt100"));
 		Actions hoverc = new Actions(driver);
 		hoverc.moveToElement(hoverCheck).perform();
 		String hovercolor = hoverCheck.getCssValue("background-color");
 		System.out.println("Hover color is :" + hovercolor);
+		
+		Thread.sleep(3000);
 		
 		WebElement hideButton = driver.findElement(By.id("j_idt88:j_idt102:imageBtn"));
 		hideButton.click();
@@ -74,7 +81,7 @@ public class ButtonExample {
 		
 		
 		
-		
+		Thread.sleep(3000);
 		
 		//How many rounded buttons are there
 		List <WebElement> countButton = driver.findElements(By.xpath("//*[@id=\"j_idt88\"]/div/div[2]/div[4]/button"));
